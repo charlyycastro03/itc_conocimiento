@@ -5,52 +5,37 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "ITC Catálogo | Ingeniería en Tecnologías Computacionales",
-  description: "Catálogo visual interactivo sobre la carrera de ITC.",
+  description:
+    "Catálogo visual interactivo de la carrera ITC: redes, servidores, programación y los mejores recursos gratuitos con certificado oficial.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-accent selection:text-white flex flex-col`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <header className="sticky top-0 z-50 glass-panel border-x-0 border-t-0 rounded-none backdrop-blur-md bg-white/60 dark:bg-slate-950/60 transition-colors">
-            <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-              <Link
-                href="/"
-                className="font-bold text-xl sm:text-2xl tracking-tight hover:text-accent transition-colors flex items-center gap-2"
-              >
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center text-white text-sm shadow-md">
-                  i
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          {/* ── Navbar ── */}
+          <header className="sticky top-0 z-50 glass border-b border-[var(--surface-border)]">
+            <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+              <Link href="/" className="flex items-center gap-2.5 group">
+                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-sm">
+                  <span className="text-white font-bold text-xs">ITC</span>
                 </div>
-                ITC<span className="text-slate-400 font-light">Catálogo</span>
+                <span className="font-semibold text-sm">
+                  <span className="text-[var(--text-primary)]">Catálogo</span>
+                  <span className="text-[var(--text-muted)]">.itc</span>
+                </span>
               </Link>
+
               <nav className="flex items-center gap-6">
                 <Link
                   href="/herramientas"
-                  className="text-sm font-medium hover:text-accent transition-colors hidden sm:block"
+                  className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors hidden sm:block"
                 >
                   Herramientas
                 </Link>
@@ -58,13 +43,16 @@ export default function RootLayout({
               </nav>
             </div>
           </header>
-          
-          <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10 md:py-16">
-            {children}
-          </main>
-          
-          <footer className="mt-auto py-8 text-center text-sm text-slate-500 dark:text-slate-400 glass-panel border-x-0 border-b-0 rounded-none">
-            <p>Catálogo interactivo diseñado para futuros ingenieros.</p>
+
+          {/* ── Main ── */}
+          <main className="flex-1">{children}</main>
+
+          {/* ── Footer ── */}
+          <footer className="border-t border-[var(--surface-border)] py-8">
+            <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[var(--text-muted)]">
+              <p>Catálogo ITC — recursos gratuitos para ingenieros del futuro.</p>
+              <p className="mono-label">Todos los cursos son verificados y gratuitos.</p>
+            </div>
           </footer>
         </ThemeProvider>
       </body>

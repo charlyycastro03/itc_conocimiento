@@ -1,112 +1,253 @@
 {
+  "stats": [
+    { "valor": "24+", "etiqueta": "Plataformas de aprendizaje" },
+    { "valor": "100%", "etiqueta": "Recursos gratuitos o auditables" },
+    { "valor": "3", "etiqueta": "Pilares tecnológicos" },
+    { "valor": "0€", "etiqueta": "Coste de certificados clave" }
+  ],
   "pilares": [
     {
       "slug": "infraestructura-redes",
       "titulo": "Infraestructura y Redes",
-      "resumen": "Cómo se conectan los dispositivos: switches, routers y servidores.",
+      "acento": "blue",
+      "icono": "network",
+      "resumen": "Aprende cómo se conectan los dispositivos: el lenguaje universal de internet, los aparatos que mueven los datos y cómo llegan a su destino.",
       "subtemas": [
         {
-          "titulo": "Modelo OSI/TCP-IP",
-          "descripcion": "Son las reglas básicas que permiten a las computadoras hablar entre sí en internet, como si fuera un idioma universal."
+          "titulo": "Modelo OSI / TCP-IP",
+          "descripcion": "Son las 'reglas del juego' que permiten a cualquier dispositivo del planeta comunicarse con otro. Como si todos hablaran el mismo idioma. El modelo tiene capas: desde el cable físico hasta la aplicación que usas."
         },
         {
           "titulo": "Switch vs Router",
-          "descripcion": "El switch conecta las computadoras de tu misma oficina; el router las conecta con el resto del mundo a través de internet."
+          "descripcion": "El switch es el 'director de tráfico' dentro de tu oficina o casa, conectando las computadoras entre sí. El router es la 'puerta de salida' que te conecta con el resto del mundo (internet). Sin ellos, no hay comunicación."
         },
         {
-          "titulo": "Topología PC-Switch-Router-Servidor",
-          "descripcion": "Es el mapa o diagrama que muestra cómo viaja la información desde tu pantalla, pasando por cables, hasta llegar al servidor final."
+          "titulo": "Topología PC → Switch → Router → Internet",
+          "descripcion": "Es el mapa completo de cómo viaja un mensaje desde tu pantalla hasta un servidor en otro país, pasando por cables, dispositivos y rutas en milisegundos."
         },
         {
-          "titulo": "Direccionamiento IP",
-          "descripcion": "Es como el número de teléfono único de cada dispositivo conectado. Permite que la información llegue al destinatario correcto."
+          "titulo": "Direccionamiento IP y Subredes",
+          "descripcion": "Cada dispositivo conectado tiene una dirección IP, como un número de teléfono único. Las subredes permiten organizar esos dispositivos en grupos lógicos para mayor seguridad y eficiencia."
+        },
+        {
+          "titulo": "Medios de transmisión (UTP y Fibra)",
+          "descripcion": "El cable UTP (el que ves en oficinas) transmite datos mediante señales eléctricas. La fibra óptica usa pulsos de luz y puede cruzar océanos enteros. Son la 'carretera' por donde viajan los datos."
         }
       ],
-      "recursos": [
+      "cursos": [
         {
-          "nombre": "Cisco Networking Academy",
-          "url": "https://www.netacad.com",
-          "descripcion": "Cursos gratuitos de redes"
+          "nombre": "Cisco: Networking Basics",
+          "plataforma": "Cisco NetAcad / Skills for All",
+          "url": "https://www.netacad.com/courses/networking/networking-basics",
+          "certificado": "Gratuito",
+          "nivel": "Principiante",
+          "descripcion": "El estándar de oro en redes. Aprende arquitectura, IPv4/IPv6 y simulación de hardware. Certificado verificable en Credly."
+        },
+        {
+          "nombre": "Google IT Support (Módulo de Redes)",
+          "plataforma": "Google / Coursera",
+          "url": "https://www.coursera.org/professional-certificates/google-it-support",
+          "certificado": "Auditable gratis / Beca disponible",
+          "nivel": "Principiante",
+          "descripcion": "Modelo TCP/IP de 5 capas, DNS, DHCP y diagnóstico de conectividad. Muy solicitado para roles de Help Desk."
+        },
+        {
+          "nombre": "Microsoft Azure: Redes virtuales",
+          "plataforma": "Microsoft Learn",
+          "url": "https://learn.microsoft.com/es-es/training/paths/configure-manage-virtual-networks-azure-administrators/",
+          "certificado": "Gratuito (insignia oficial)",
+          "nivel": "Intermedio",
+          "descripcion": "Implementa y protege VNets, grupos de seguridad y enrutamiento híbrido. Camino hacia la certificación AZ-104."
+        },
+        {
+          "nombre": "AWS Networking Basics",
+          "plataforma": "AWS Skill Builder",
+          "url": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/16434/aws-networking-basics",
+          "certificado": "Gratuito (insignia digital)",
+          "nivel": "Principiante–Intermedio",
+          "descripcion": "Diseña VPCs, tablas de ruteo, NAT Gateways y políticas de conectividad cloud. Respaldo oficial de Amazon."
+        },
+        {
+          "nombre": "IBM SkillsBuild: Networking Fundamentals",
+          "plataforma": "IBM SkillsBuild",
+          "url": "https://skillsbuild.org/adult-learners",
+          "certificado": "Gratuito (Credly + certificado IBM)",
+          "nivel": "Principiante",
+          "descripcion": "Principios de telecomunicaciones, conmutación de paquetes y seguridad perimetral. Avalado por IBM."
         }
       ]
     },
     {
       "slug": "servidores-virtualizacion",
       "titulo": "Servidores y Virtualización",
-      "resumen": "Servidores físicos, máquinas virtuales e hipervisores.",
+      "acento": "purple",
+      "icono": "server",
+      "resumen": "Descubre cómo funcionan las máquinas que sostienen internet: servidores físicos, máquinas virtuales y la tecnología que permite tener muchas computadoras dentro de una sola.",
       "subtemas": [
         {
-          "titulo": "Servidor físico vs VM",
-          "descripcion": "Un servidor físico es una máquina real que puedes tocar. Una VM (Máquina Virtual) te permite tener múltiples 'computadoras' simuladas dentro de ese único servidor."
+          "titulo": "Servidor físico vs Máquina Virtual (VM)",
+          "descripcion": "Un servidor físico es una computadora muy potente que puedes tocar. Una VM es como tener varias computadoras 'imaginarias' corriendo dentro de esa máquina física al mismo tiempo. Más eficiencia, menos hardware."
         },
         {
-          "titulo": "VMware ESXi/Workstation",
-          "descripcion": "Programas especializados que hacen posible la magia de crear, encender y gestionar varias máquinas virtuales de forma segura."
+          "titulo": "Hipervisores: VMware ESXi y Hyper-V",
+          "descripcion": "El hipervisor es el 'director de orquesta' que gestiona todas las máquinas virtuales en un servidor. VMware y Hyper-V son los más usados en empresas del mundo."
         },
         {
-          "titulo": "Servidores HP ProLiant / iLO",
-          "descripcion": "Computadoras muy potentes para empresas. Incluyen tecnología que permite administrarlas y repararlas a distancia, sin estar físicamente ahí."
+          "titulo": "Servidores HP ProLiant y administración iLO",
+          "descripcion": "Los servidores HP ProLiant son el hardware de grado empresarial más popular en centros de datos. La tecnología iLO permite administrarlos y diagnosticarlos completamente a distancia, sin estar físicamente ahí."
         },
         {
-          "titulo": "Contenedores (Docker)",
-          "descripcion": "Son 'cajas' súper ligeras que empaquetan una aplicación para que funcione siempre igual, sin importar en qué computadora se ejecute."
+          "titulo": "Contenedores: Docker y la evolución de las VMs",
+          "descripcion": "Los contenedores son 'cajas' ultra-ligeras que empaquetan una aplicación y todo lo que necesita para funcionar. Son más rápidos y eficientes que las VMs completas. Docker es la tecnología líder."
+        },
+        {
+          "titulo": "Linux para servidores (Red Hat / Ubuntu Server)",
+          "descripcion": "El 96% de los servidores del mundo corren Linux. Conocer la terminal de Linux es una habilidad esencial para cualquier ingeniero que trabaje con infraestructura."
         }
       ],
-      "recursos": [
+      "cursos": [
         {
-          "nombre": "VMware Learning",
-          "url": "https://www.vmware.com/learning.html",
-          "descripcion": "Recursos y certificaciones"
+          "nombre": "VMware vSphere Fundamentals",
+          "plataforma": "VMware Customer Connect",
+          "url": "https://customerconnect.vmware.com/learning",
+          "certificado": "Gratuito (constancia digital)",
+          "nivel": "Principiante–Intermedio",
+          "descripcion": "Arquitectura ESXi, administración de VMs y vCenter Server. El líder indiscutible en virtualización corporativa."
+        },
+        {
+          "nombre": "Red Hat Enterprise Linux Overview (RH018)",
+          "plataforma": "Red Hat Training",
+          "url": "https://www.redhat.com/es/services/training/rh018-red-hat-enterprise-linux-technical-overview",
+          "certificado": "Gratuito (acceso libre oficial)",
+          "nivel": "Principiante",
+          "descripcion": "Administra servidores Linux, gestiona almacenamiento, usuarios y servicios. Puerta de entrada a la certificación RHCSA."
+        },
+        {
+          "nombre": "Introducción a Hyper-V y VMs",
+          "plataforma": "Microsoft Learn",
+          "url": "https://learn.microsoft.com/es-es/training/modules/intro-to-hyper-v/",
+          "certificado": "Gratuito (insignia modular)",
+          "nivel": "Principiante–Intermedio",
+          "descripcion": "Crea conmutadores virtuales, discos VHDX y gestiona alta disponibilidad. Para entornos Windows Server."
+        },
+        {
+          "nombre": "Getting Started with Amazon EC2",
+          "plataforma": "AWS Skill Builder",
+          "url": "https://explore.skillbuilder.aws/learn/course/external/view/elearning/17144/getting-started-with-amazon-ec2",
+          "certificado": "Gratuito (insignia oficial)",
+          "nivel": "Principiante",
+          "descripcion": "Configura instancias, volúmenes EBS, grupos de seguridad y auto-scaling. Esencial para Cloud/DevOps."
+        },
+        {
+          "nombre": "Play with Docker Classroom",
+          "plataforma": "Docker",
+          "url": "https://training.play-with-docker.com/",
+          "certificado": "Gratuito (laboratorio interactivo)",
+          "nivel": "Principiante–Intermedio",
+          "descripcion": "Empaqueta apps en Docker, escribe Dockerfiles y orquesta con Docker Compose. El estándar de facto en desarrollo moderno."
+        },
+        {
+          "nombre": "Proxmox VE Documentación Oficial",
+          "plataforma": "Proxmox",
+          "url": "https://pve.proxmox.com/pve-docs/",
+          "certificado": "Gratuito (open-source)",
+          "nivel": "Principiante–Avanzado",
+          "descripcion": "La alternativa open-source número 1 a VMware. Virtualización KVM, contenedores LXC y almacenamiento ZFS."
         }
       ]
     },
     {
       "slug": "programacion",
-      "titulo": "Programación: Front, Back y Base de Datos",
-      "resumen": "Cómo se construye una aplicación de punta a punta, y el rol de la IA como asistente.",
+      "titulo": "Programación: Front, Back y BD",
+      "acento": "emerald",
+      "icono": "code",
+      "resumen": "De la pantalla que ves a la base de datos que guarda tus datos: aprende cómo se construye una aplicación completa y cuál es el rol real de la IA como herramienta del programador.",
       "subtemas": [
         {
-          "titulo": "Frontend (lo que el usuario ve)",
-          "descripcion": "Es toda la parte visual con la que interactúas en una web o app: botones, menús, colores, imágenes y animaciones."
+          "titulo": "Frontend: lo que el usuario ve",
+          "descripcion": "Es todo lo visual: botones, colores, animaciones, formularios. Se construye con HTML (estructura), CSS (diseño) y JavaScript (interactividad). Frameworks como React hacen este proceso más rápido y organizado."
         },
         {
-          "titulo": "Backend (lo que procesa)",
-          "descripcion": "El cerebro invisible detrás de la pantalla. Recibe lo que pides, hace cálculos complejos y te devuelve un resultado."
+          "titulo": "Backend: el cerebro que procesa",
+          "descripcion": "Es el motor invisible. Cuando haces clic en 'Iniciar sesión', el backend verifica tu contraseña, consulta la base de datos y decide si puedes entrar. Se programa en lenguajes como Node.js, Python o Go."
         },
         {
-          "titulo": "Base de datos (SQL vs NoSQL)",
-          "descripcion": "Un inmenso archivero digital que guarda de forma súper rápida y segura toda la información, como tus contraseñas, fotos y amigos."
+          "titulo": "Base de datos: SQL vs NoSQL",
+          "descripcion": "SQL (relacional) guarda datos en tablas organizadas, como una hoja de cálculo gigante. NoSQL guarda datos en formato más flexible, como documentos JSON. Cada uno tiene sus casos de uso ideales."
         },
         {
-          "titulo": "IA como asistente de código",
-          "descripcion": "Herramientas inteligentes que sugieren código rápidamente. El programador actual las usa para ser más rápido, pero siempre debe entender y revisar lo que hacen."
+          "titulo": "APIs REST: cómo hablan el Front y el Back",
+          "descripcion": "Una API es como un 'mesero' entre el frontend y el backend. El frontend pide datos (GET /usuarios), el backend los procesa y responde. Es el lenguaje universal entre aplicaciones modernas."
+        },
+        {
+          "titulo": "IA como asistente de código (2025–2026)",
+          "descripcion": "Herramientas como GitHub Copilot o ChatGPT pueden sugerir y generar código. El programador de hoy debe saber usarlas para ser más rápido, pero siempre tiene que entender, revisar y decidir qué va en producción. La IA es tu copiloto, no el piloto."
         }
       ],
-      "recursos": [
+      "cursos": [
         {
-          "nombre": "GitHub",
-          "url": "https://github.com",
-          "descripcion": "Control de versiones y portafolio"
+          "nombre": "CS50x — Intro a Computación (Harvard)",
+          "plataforma": "Harvard / edX",
+          "url": "https://cs50.harvard.edu/x/",
+          "certificado": "Gratuito (certificado oficial de Harvard)",
+          "nivel": "Principiante–Intermedio",
+          "descripcion": "El mejor curso introductorio de computación del mundo. Cubre C, Python, SQL y Web. Certificado 100% gratis al aprobarlo."
         },
         {
-          "nombre": "Vercel",
-          "url": "https://vercel.com",
-          "descripcion": "Deploy gratuito de proyectos"
+          "nombre": "freeCodeCamp Certifications",
+          "plataforma": "freeCodeCamp",
+          "url": "https://www.freecodecamp.org/learn",
+          "certificado": "Gratuito (certificados verificados con enlace público)",
+          "nivel": "Principiante–Avanzado",
+          "descripcion": "Full stack: HTML, CSS, JavaScript, React, Node.js y PostgreSQL. El estándar mundial en aprendizaje autodidacta."
         },
         {
-          "nombre": "Supabase",
-          "url": "https://supabase.com",
-          "descripcion": "Backend y base de datos gratis"
+          "nombre": "Meta Front-End Developer Certificate",
+          "plataforma": "Meta / Coursera",
+          "url": "https://www.coursera.org/professional-certificates/meta-front-end-developer",
+          "certificado": "Auditable gratis / Beca disponible",
+          "nivel": "Principiante–Intermedio",
+          "descripcion": "React, Figma, APIs RESTful y bases de datos relacionales. Desarrollado por ingenieros de Meta."
         },
         {
-          "nombre": "freeCodeCamp",
-          "url": "https://www.freecodecamp.org",
-          "descripcion": "Cursos gratuitos de programación"
+          "nombre": "Foundational C# with Microsoft",
+          "plataforma": "Microsoft + freeCodeCamp",
+          "url": "https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/",
+          "certificado": "Gratuito (certificado oficial Microsoft)",
+          "nivel": "Principiante",
+          "descripcion": "La primera certificación oficial 100% gratuita respaldada por Microsoft. Lógica, POO y depuración en C#."
         },
         {
-          "nombre": "MDN Web Docs",
-          "url": "https://developer.mozilla.org",
-          "descripcion": "Documentación web"
+          "nombre": "MongoDB Developer Learning Path",
+          "plataforma": "MongoDB University",
+          "url": "https://learn.mongodb.com/",
+          "certificado": "Gratuito (insignia Credly oficial)",
+          "nivel": "Principiante–Intermedio",
+          "descripcion": "Modelado NoSQL, CRUD, Aggregation Framework y drivers para Node.js y Python. Del creador de MongoDB."
+        },
+        {
+          "nombre": "GitHub Skills Interactive Labs",
+          "plataforma": "GitHub Skills",
+          "url": "https://skills.github.com/",
+          "certificado": "Gratuito (micro-insignias en perfil GitHub)",
+          "nivel": "Principiante–Intermedio",
+          "descripcion": "Git Flow, Pull Requests, GitHub Actions y CI/CD en repositorios reales. Imprescindible para cualquier desarrollador."
+        },
+        {
+          "nombre": "Next.js Learn (App Router)",
+          "plataforma": "Vercel",
+          "url": "https://nextjs.org/learn",
+          "certificado": "Gratuito (guías interactivas)",
+          "nivel": "Intermedio",
+          "descripcion": "Full-stack moderno con React Server Components, Server Actions y PostgreSQL. El stack de las startups actuales."
+        },
+        {
+          "nombre": "Oracle Learning Explorer",
+          "plataforma": "Oracle",
+          "url": "https://mylearn.oracle.com/",
+          "certificado": "Gratuito (insignia oficial de Oracle)",
+          "nivel": "Principiante",
+          "descripcion": "Fundamentos de SQL y bases de datos relacionales, respaldado por el líder histórico en BD empresariales."
         }
       ]
     }

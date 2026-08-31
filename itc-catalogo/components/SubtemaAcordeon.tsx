@@ -9,38 +9,46 @@ interface Subtema {
   descripcion: string;
 }
 
-export default function SubtemaAcordeon({ subtema }: { subtema: Subtema }) {
+export default function SubtemaAcordeon({
+  subtema,
+  accentColor = "var(--accent)",
+}: {
+  subtema: Subtema;
+  accentColor?: string;
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="glass-panel rounded-xl overflow-hidden transition-colors hover:bg-white/40 dark:hover:bg-slate-900/40">
+    <div className={`glass rounded-xl border border-[var(--surface-border)] overflow-hidden transition-all duration-200 ${isOpen ? "shadow-md" : ""}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center p-5 focus:outline-none"
+        className="w-full flex justify-between items-center px-5 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] hover:bg-white/30 dark:hover:bg-white/5 transition-colors"
       >
-        <h3 className="font-semibold text-left text-slate-800 dark:text-slate-100 pr-4">
-          {subtema.titulo}
-        </h3>
-        <motion.div
+        <span className="font-medium text-sm text-[var(--text-primary)] pr-4 leading-snug">{subtema.titulo}</span>
+        <motion.span
           animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="text-slate-500 flex-shrink-0"
+          transition={{ duration: 0.25, ease: "easeInOut" }}
+          className="text-[var(--text-muted)] flex-shrink-0"
         >
-          <ChevronDown size={20} />
-        </motion.div>
+          <ChevronDown size={18} />
+        </motion.span>
       </button>
-      
-      <AnimatePresence>
+
+      <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            key="content"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
             className="overflow-hidden"
           >
-            <div className="p-5 pt-0 text-slate-600 dark:text-slate-400 border-t border-slate-200/50 dark:border-slate-800/50 mt-2">
-              <p className="leading-relaxed">
+            <div
+              className="px-5 pb-5 pt-1 border-t border-[var(--surface-border)]"
+              style={{ borderLeftColor: accentColor, borderLeftWidth: "2px" }}
+            >
+              <p className="text-sm text-[var(--text-secondary)] leading-relaxed mt-2">
                 {subtema.descripcion}
               </p>
             </div>

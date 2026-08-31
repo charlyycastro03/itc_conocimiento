@@ -1,87 +1,182 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import data from "@/content/content.json";
 import SubtemaAcordeon from "@/components/SubtemaAcordeon";
-import HerramientaCard from "@/components/HerramientaCard";
 import { FadeIn } from "@/components/FadeIn";
-import { ArrowLeft, BookOpen, Wrench } from "lucide-react";
+import { ArrowLeft, BookOpen, Award, ExternalLink, CheckCircle } from "lucide-react";
 
-export default async function PilarPage({
-  params,
+/* ────────────────────────────────────────────────────────────
+   CONFIG POR PILAR
+───────────────────────────────────────────────────────────── */
+const pilarConfig: Record<string, {
+  accent: string;
+  gradient: string;
+  img: string;
+  textGradientClass: string;
+}> = {
+  "infraestructura-redes": {
+    accent: "#0070f3",
+    gradient: "from-blue-500/10 to-cyan-500/5",
+    img: "/diagram_redes.png",
+    textGradientClass: "text-gradient-blue",
+  },
+  "servidores-virtualizacion": {
+    accent: "#8b5cf6",
+    gradient: "from-purple-500/10 to-violet-500/5",
+    img: "/diagram_servidores.png",
+    textGradientClass: "text-gradient-purple",
+  },
+  "programacion": {
+    accent: "#10b981",
+    gradient: "from-emerald-500/10 to-teal-500/5",
+    img: "/diagram_programacion.png",
+    textGradientClass: "text-gradient-emerald",
+  },
+};
+
+/* ────────────────────────────────────────────────────────────
+   CURSO CARD
+───────────────────────────────────────────────────────────── */
+function CursoCard({
+  curso,
+  accentColor,
 }: {
-  params: Promise<{ slug: string }>;
+  curso: { nombre: string; plataforma: string; url: string; certificado: string; nivel: string; descripcion: string };
+  accentColor: string;
 }) {
-  const { slug } = await params;
-  const pilar = data.pilares.find((p) => p.slug === slug);
-
-  if (!pilar) {
-    notFound();
-  }
-
+  const isGratis = curso.certificado.toLowerCase().startsWith("gratuito");
   return (
-    <div className="max-w-4xl mx-auto py-4">
-      <FadeIn delay={0.1}>
-        <Link
-          href="/"
-          className="inline-flex items-center text-sm font-medium text-slate-500 hover:text-accent mb-8 transition-colors group"
-        >
-          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          Volver al inicio
-        </Link>
-      </FadeIn>
-
-      <FadeIn delay={0.2}>
-        <div className="glass-panel p-8 md:p-12 rounded-3xl mb-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white tracking-tight relative z-10">
-            {pilar.titulo}
-          </h1>
-          <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed relative z-10">
-            {pilar.resumen}
-          </p>
-        </div>
-      </FadeIn>
-
-      <div className="mb-16">
-        <FadeIn delay={0.3}>
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-600 dark:text-blue-400">
-              <BookOpen size={20} />
-            </div>
-            <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
-              Temas principales
-            </h2>
-          </div>
-        </FadeIn>
-        
-        <div className="space-y-4">
-          {pilar.subtemas.map((subtema, idx) => (
-            <FadeIn key={idx} delay={0.4 + idx * 0.1}>
-              <SubtemaAcordeon subtema={subtema} />
-            </FadeIn>
-          ))}
-        </div>
+    <div className="glass rounded-xl p-5 border border-[var(--surface-border)] hover:border-[var(--surface-border)] hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+      <div className="flex items-start justify-between mb-3 gap-2">
+        <h3 className="font-semibold text-sm text-[var(--text-primary)] leading-snug">{curso.nombre}</h3>
+        {isGratis ? (
+          <span className="badge-free flex-shrink-0">✓ Gratis</span>
+        ) : (
+          <span className="badge-audit flex-shrink-0">Auditable</span>
+        )}
       </div>
 
-      <div>
-        <FadeIn delay={0.6}>
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-              <Wrench size={20} />
+      <p className="mono-label mb-2">{curso.plataforma}</p>
+      <p className="text-xs text-[var(--text-secondary)] leading-relaxed mb-4 flex-1">{curso.descripcion}</p>
+
+      <div className="flex items-center justify-between mt-auto pt-3 border-t border-[var(--surface-border)]">
+        <span className="text-xs text-[var(--text-muted)] flex items-center gap-1">
+          <CheckCircle size={11} style={{ color: accentColor }} /> {curso.nivel}
+        </span>
+        <a
+          href={curso.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold transition-colors hover:opacity-80"
+          style={{ color: accentColor }}
+        >
+          Ir al curso <ExternalLink size={11} />
+        </a>
+      </div>
+    </div>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────
+   PAGE
+───────────────────────────────────────────────────────────── */
+export default async function PilarPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const pilar = data.pilares.find((p) => p.slug === slug);
+  if (!pilar) notFound();
+
+  const cfg = pilarConfig[pilar.slug] ?? pilarConfig["programacion"];
+  const cursos = (pilar as unknown as { cursos?: { nombre: string; plataforma: string; url: string; certificado: string; nivel: string; descripcion: string }[] }).cursos ?? [];
+
+  return (
+    <div className="relative">
+      <div className="absolute inset-0 dot-grid pointer-events-none opacity-40" />
+      <div className="relative max-w-5xl mx-auto px-6 py-12 space-y-16">
+
+        {/* Back */}
+        <FadeIn delay={0}>
+          <Link href="/" className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group">
+            <ArrowLeft size={15} className="group-hover:-translate-x-1 transition-transform" />
+            Inicio
+          </Link>
+        </FadeIn>
+
+        {/* ── HERO PILAR ── */}
+        <FadeIn delay={0.1}>
+          <div className={`glass rounded-3xl overflow-hidden border border-[var(--surface-border)]`}>
+            {/* Imagen técnica del pilar */}
+            <div className={`relative h-56 sm:h-72 bg-gradient-to-br ${cfg.gradient}`}>
+              <Image
+                src={cfg.img}
+                alt={`Diagrama de ${pilar.titulo}`}
+                fill
+                className="object-cover object-center"
+                sizes="100vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
-              Recursos y Herramientas
-            </h2>
+            <div className="p-8 md:p-12">
+              <span className="mono-label mb-4 block">Pilar del ITC</span>
+              <h1 className={`text-3xl md:text-5xl font-bold tracking-tight mb-4 ${cfg.textGradientClass}`}>
+                {pilar.titulo}
+              </h1>
+              <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl">{pilar.resumen}</p>
+            </div>
           </div>
         </FadeIn>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {pilar.recursos.map((recurso, idx) => (
-            <FadeIn key={idx} delay={0.7 + idx * 0.1}>
-              <HerramientaCard recurso={recurso} />
-            </FadeIn>
-          ))}
-        </div>
+
+        {/* ── TEMAS ── */}
+        <section>
+          <FadeIn delay={0.2}>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center text-white flex-shrink-0" style={{ background: cfg.accent }}>
+                <BookOpen size={18} />
+              </div>
+              <div>
+                <span className="mono-label">Contenido del módulo</span>
+                <h2 className="text-2xl font-bold text-[var(--text-primary)]">Temas principales</h2>
+              </div>
+            </div>
+          </FadeIn>
+          <div className="space-y-3">
+            {pilar.subtemas.map((subtema, idx) => (
+              <FadeIn key={idx} delay={0.3 + idx * 0.08}>
+                <SubtemaAcordeon subtema={subtema} accentColor={cfg.accent} />
+              </FadeIn>
+            ))}
+          </div>
+        </section>
+
+        <div className="section-divider" />
+
+        {/* ── CURSOS ── */}
+        <section>
+          <FadeIn delay={0.4}>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center text-white flex-shrink-0" style={{ background: cfg.accent }}>
+                <Award size={18} />
+              </div>
+              <div>
+                <span className="mono-label">Certificados y plataformas</span>
+                <h2 className="text-2xl font-bold text-[var(--text-primary)]">Cursos gratuitos recomendados</h2>
+              </div>
+            </div>
+            <p className="text-sm text-[var(--text-secondary)] mb-6 ml-12">
+              Todos los recursos son gratuitos o auditables sin costo. Los marcados con ✓ Gratis otorgan un certificado oficial sin pagar.
+            </p>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {cursos.map((curso, idx) => (
+              <FadeIn key={idx} delay={0.5 + idx * 0.07}>
+                <CursoCard curso={curso} accentColor={cfg.accent} />
+              </FadeIn>
+            ))}
+          </div>
+        </section>
+
       </div>
     </div>
   );
