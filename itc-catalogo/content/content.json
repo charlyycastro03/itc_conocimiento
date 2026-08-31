@@ -1,0 +1,114 @@
+{
+  "pilares": [
+    {
+      "slug": "infraestructura-redes",
+      "titulo": "Infraestructura y Redes",
+      "resumen": "Cómo se conectan los dispositivos: switches, routers y servidores.",
+      "subtemas": [
+        {
+          "titulo": "Modelo OSI/TCP-IP",
+          "descripcion": "Son las reglas básicas que permiten a las computadoras hablar entre sí en internet, como si fuera un idioma universal."
+        },
+        {
+          "titulo": "Switch vs Router",
+          "descripcion": "El switch conecta las computadoras de tu misma oficina; el router las conecta con el resto del mundo a través de internet."
+        },
+        {
+          "titulo": "Topología PC-Switch-Router-Servidor",
+          "descripcion": "Es el mapa o diagrama que muestra cómo viaja la información desde tu pantalla, pasando por cables, hasta llegar al servidor final."
+        },
+        {
+          "titulo": "Direccionamiento IP",
+          "descripcion": "Es como el número de teléfono único de cada dispositivo conectado. Permite que la información llegue al destinatario correcto."
+        }
+      ],
+      "recursos": [
+        {
+          "nombre": "Cisco Networking Academy",
+          "url": "https://www.netacad.com",
+          "descripcion": "Cursos gratuitos de redes"
+        }
+      ]
+    },
+    {
+      "slug": "servidores-virtualizacion",
+      "titulo": "Servidores y Virtualización",
+      "resumen": "Servidores físicos, máquinas virtuales e hipervisores.",
+      "subtemas": [
+        {
+          "titulo": "Servidor físico vs VM",
+          "descripcion": "Un servidor físico es una máquina real que puedes tocar. Una VM (Máquina Virtual) te permite tener múltiples 'computadoras' simuladas dentro de ese único servidor."
+        },
+        {
+          "titulo": "VMware ESXi/Workstation",
+          "descripcion": "Programas especializados que hacen posible la magia de crear, encender y gestionar varias máquinas virtuales de forma segura."
+        },
+        {
+          "titulo": "Servidores HP ProLiant / iLO",
+          "descripcion": "Computadoras muy potentes para empresas. Incluyen tecnología que permite administrarlas y repararlas a distancia, sin estar físicamente ahí."
+        },
+        {
+          "titulo": "Contenedores (Docker)",
+          "descripcion": "Son 'cajas' súper ligeras que empaquetan una aplicación para que funcione siempre igual, sin importar en qué computadora se ejecute."
+        }
+      ],
+      "recursos": [
+        {
+          "nombre": "VMware Learning",
+          "url": "https://www.vmware.com/learning.html",
+          "descripcion": "Recursos y certificaciones"
+        }
+      ]
+    },
+    {
+      "slug": "programacion",
+      "titulo": "Programación: Front, Back y Base de Datos",
+      "resumen": "Cómo se construye una aplicación de punta a punta, y el rol de la IA como asistente.",
+      "subtemas": [
+        {
+          "titulo": "Frontend (lo que el usuario ve)",
+          "descripcion": "Es toda la parte visual con la que interactúas en una web o app: botones, menús, colores, imágenes y animaciones."
+        },
+        {
+          "titulo": "Backend (lo que procesa)",
+          "descripcion": "El cerebro invisible detrás de la pantalla. Recibe lo que pides, hace cálculos complejos y te devuelve un resultado."
+        },
+        {
+          "titulo": "Base de datos (SQL vs NoSQL)",
+          "descripcion": "Un inmenso archivero digital que guarda de forma súper rápida y segura toda la información, como tus contraseñas, fotos y amigos."
+        },
+        {
+          "titulo": "IA como asistente de código",
+          "descripcion": "Herramientas inteligentes que sugieren código rápidamente. El programador actual las usa para ser más rápido, pero siempre debe entender y revisar lo que hacen."
+        }
+      ],
+      "recursos": [
+        {
+          "nombre": "GitHub",
+          "url": "https://github.com",
+          "descripcion": "Control de versiones y portafolio"
+        },
+        {
+          "nombre": "Vercel",
+          "url": "https://vercel.com",
+          "descripcion": "Deploy gratuito de proyectos"
+        },
+        {
+          "nombre": "Supabase",
+          "url": "https://supabase.com",
+          "descripcion": "Backend y base de datos gratis"
+        },
+        {
+          "nombre": "freeCodeCamp",
+          "url": "https://www.freecodecamp.org",
+          "descripcion": "Cursos gratuitos de programación"
+        },
+        {
+          "nombre": "MDN Web Docs",
+          "url": "https://developer.mozilla.org",
+          "descripcion": "Documentación web"
+        }
+      ]
+    }
+  ]
+}
