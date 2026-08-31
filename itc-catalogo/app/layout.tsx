@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -23,9 +24,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <header className="sticky top-0 z-50 glass border-b border-[var(--surface-border)]">
             <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
               <Link href="/" className="flex items-center gap-2.5 group">
-                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-sm">
-                  <span className="text-white font-bold text-xs">ITC</span>
-                </div>
+                <Image
+                  src="/logo.png"
+                  alt="ITC Catálogo logo"
+                  width={32}
+                  height={32}
+                  className="rounded-lg shadow-sm group-hover:opacity-90 transition-opacity"
+                  priority
+                />
                 <span className="font-semibold text-sm">
                   <span className="text-[var(--text-primary)]">Catálogo</span>
                   <span className="text-[var(--text-muted)]">.itc</span>
