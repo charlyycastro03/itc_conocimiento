@@ -145,7 +145,7 @@ export default function Home() {
       {/* Dot grid background */}
       <div className="absolute inset-0 dot-grid pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-6 py-16 space-y-24">
+      <div className="relative max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 space-y-16 sm:space-y-24">
 
         {/* ── HERO ── */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -257,7 +257,7 @@ export default function Home() {
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          className="glass rounded-2xl p-8 md:p-12 border border-[var(--surface-border)] space-y-8"
+          className="glass rounded-2xl p-6 md:p-12 border border-[var(--surface-border)] space-y-8"
         >
           <motion.div variants={fadeUp}>
             <span className="mono-label">¿Por qué ITC?</span>

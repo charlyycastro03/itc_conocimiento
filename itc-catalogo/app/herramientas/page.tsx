@@ -133,7 +133,7 @@ export default function HerramientasPage() {
   return (
     <div className="relative">
       <div className="absolute inset-0 dot-grid pointer-events-none opacity-40" />
-      <div className="relative max-w-6xl mx-auto px-6 py-16 space-y-10">
+      <div className="relative max-w-6xl mx-auto px-5 sm:px-6 py-10 sm:py-16 space-y-8 sm:space-y-10">
 
         {/* ── HEADER ── */}
         <div className="space-y-3">
@@ -147,10 +147,10 @@ export default function HerramientasPage() {
         </div>
 
         {/* ── TABS ── */}
-        <div className="glass rounded-2xl p-6 border border-[var(--surface-border)] space-y-5">
+        <div className="glass rounded-2xl p-4 sm:p-6 border border-[var(--surface-border)] space-y-5">
 
           {/* Tab switcher */}
-          <div className="flex gap-2 p-1 glass rounded-xl border border-[var(--surface-border)] w-fit">
+          <div className="flex flex-col sm:flex-row gap-2 p-1 glass rounded-xl border border-[var(--surface-border)] w-full sm:w-fit">
             {tabs.map(tab => {
               const isActive = activeTab === tab.id;
               const count = tab.id === "cursos" ? totalCursos : totalHerram;

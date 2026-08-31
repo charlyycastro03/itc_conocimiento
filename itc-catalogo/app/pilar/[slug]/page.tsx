@@ -99,7 +99,7 @@ export default async function PilarPage({ params }: { params: Promise<{ slug: st
   return (
     <div className="relative">
       <div className="absolute inset-0 dot-grid pointer-events-none opacity-40" />
-      <div className="relative max-w-5xl mx-auto px-6 py-12 space-y-16">
+      <div className="relative max-w-5xl mx-auto px-5 sm:px-6 py-8 sm:py-12 space-y-12 sm:space-y-16">
 
         {/* Back */}
         <FadeIn delay={0}>
@@ -124,7 +124,7 @@ export default async function PilarPage({ params }: { params: Promise<{ slug: st
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
-            <div className="p-8 md:p-12">
+            <div className="p-6 md:p-12">
               <span className="mono-label mb-4 block">Pilar del ITC</span>
               <h1 className={`text-3xl md:text-5xl font-bold tracking-tight mb-4 ${cfg.textGradientClass}`}>
                 {pilar.titulo}

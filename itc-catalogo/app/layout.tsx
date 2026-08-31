@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {/* ── Navbar ── */}
           <header className="sticky top-0 z-50 glass border-b border-[var(--surface-border)]">
-            <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
               <Link href="/" className="flex items-center gap-2.5 group">
                 <Image
                   src="/logo.png"
@@ -38,10 +38,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </span>
               </Link>
 
-              <nav className="flex items-center gap-6">
+              <nav className="flex items-center gap-4 sm:gap-6">
                 <Link
                   href="/herramientas"
-                  className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors hidden sm:block"
+                  className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-medium"
                 >
                   Herramientas
                 </Link>
