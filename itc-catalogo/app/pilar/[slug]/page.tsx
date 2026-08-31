@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Wrench } from "lucide-react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import data from "@/content/content.json";
@@ -87,7 +88,13 @@ export default async function PilarPage({ params }: { params: Promise<{ slug: st
   if (!pilar) notFound();
 
   const cfg = pilarConfig[pilar.slug] ?? pilarConfig["programacion"];
-  const cursos = (pilar as unknown as { cursos?: { nombre: string; plataforma: string; url: string; certificado: string; nivel: string; descripcion: string }[] }).cursos ?? [];
+  type PilarExtra = typeof pilar & {
+    cursos?: { nombre: string; plataforma: string; url: string; certificado: string; nivel: string; descripcion: string }[];
+    herramientas?: { nombre: string; url: string; descripcion: string; tipo: string; plataforma: string }[];
+  };
+  const pilarExtra = pilar as PilarExtra;
+  const cursos      = pilarExtra.cursos      ?? [];
+  const herramientas = pilarExtra.herramientas ?? [];
 
   return (
     <div className="relative">
@@ -176,6 +183,52 @@ export default async function PilarPage({ params }: { params: Promise<{ slug: st
             ))}
           </div>
         </section>
+
+        <div className="section-divider" />
+
+        {/* ── HERRAMIENTAS ── */}
+        {herramientas.length > 0 && (
+          <section>
+            <FadeIn delay={0.6}>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center text-white flex-shrink-0" style={{ background: cfg.accent }}>
+                  <Wrench size={18} />
+                </div>
+                <div>
+                  <span className="mono-label">Software gratuito para practicar</span>
+                  <h2 className="text-2xl font-bold text-[var(--text-primary)]">Herramientas de práctica</h2>
+                </div>
+              </div>
+              <p className="text-sm text-[var(--text-secondary)] mb-6 ml-12">
+                Software real y gratuito que usarás en el trabajo. Descárgalo, instálalo y practica en tu propia máquina.
+              </p>
+            </FadeIn>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {herramientas.map((h, idx) => (
+                <FadeIn key={idx} delay={0.7 + idx * 0.07}>
+                  <div className="glass rounded-xl p-5 border border-[var(--surface-border)] flex flex-col h-full hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <h3 className="font-semibold text-sm text-[var(--text-primary)] leading-snug">{h.nombre}</h3>
+                      <span className="flex-shrink-0 text-xs px-2 py-0.5 rounded-full border font-medium" style={{ color: cfg.accent, borderColor: `${cfg.accent}33`, background: `${cfg.accent}12` }}>
+                        {h.tipo}
+                      </span>
+                    </div>
+                    <p className="mono-label mb-3">{h.plataforma}</p>
+                    <p className="text-xs text-[var(--text-secondary)] leading-relaxed flex-1 mb-4">{h.descripcion}</p>
+                    <div className="pt-3 border-t border-[var(--surface-border)]">
+                      <a href={h.url} target="_blank" rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg text-white transition-opacity hover:opacity-80"
+                        style={{ background: cfg.accent }}>
+                        Descargar / Abrir <ExternalLink size={11} />
+                      </a>
+                    </div>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </section>
+        )}
 
       </div>
     </div>

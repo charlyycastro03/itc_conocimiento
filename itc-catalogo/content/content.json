@@ -1,7 +1,7 @@
 {
   "stats": [
     { "valor": "24+", "etiqueta": "Plataformas de aprendizaje" },
-    { "valor": "100%", "etiqueta": "Recursos gratuitos o auditables" },
+    { "valor": "40+", "etiqueta": "Recursos gratuitos" },
     { "valor": "3", "etiqueta": "Pilares tecnológicos" },
     { "valor": "0€", "etiqueta": "Coste de certificados clave" }
   ],
@@ -74,6 +74,50 @@
           "certificado": "Gratuito (Credly + certificado IBM)",
           "nivel": "Principiante",
           "descripcion": "Principios de telecomunicaciones, conmutación de paquetes y seguridad perimetral. Avalado por IBM."
+        }
+      ],
+      "herramientas": [
+        {
+          "nombre": "Cisco Packet Tracer",
+          "url": "https://www.netacad.com/cisco-packet-tracer",
+          "descripcion": "El simulador de redes oficial de Cisco. Practica la configuración de routers, switches y topologías completas sin necesitar hardware real. Gratuito con cuenta de NetAcad.",
+          "tipo": "Simulador",
+          "plataforma": "Cisco NetAcad"
+        },
+        {
+          "nombre": "GNS3",
+          "url": "https://www.gns3.com/",
+          "descripcion": "Simulador de red avanzado y open-source. Permite emular routers y switches reales de Cisco, Juniper y otros fabricantes. Ideal para laboratorios complejos.",
+          "tipo": "Simulador",
+          "plataforma": "Open Source"
+        },
+        {
+          "nombre": "Wireshark",
+          "url": "https://www.wireshark.org/",
+          "descripcion": "El analizador de tráfico de red más usado del mundo. Captura y examina los paquetes que viajan por tu red en tiempo real. Imprescindible para entender cómo funcionan los protocolos.",
+          "tipo": "Analizador de red",
+          "plataforma": "Open Source"
+        },
+        {
+          "nombre": "PuTTY",
+          "url": "https://www.putty.org/",
+          "descripcion": "Cliente SSH y Telnet gratuito para conectarte a routers, switches y servidores remotos desde Windows. El estándar de la industria para acceso remoto a dispositivos de red.",
+          "tipo": "Cliente SSH",
+          "plataforma": "Open Source"
+        },
+        {
+          "nombre": "Nmap",
+          "url": "https://nmap.org/",
+          "descripcion": "Herramienta de escaneo de redes y auditoría de seguridad. Descubre qué dispositivos están en una red, qué puertos tienen abiertos y qué servicios están corriendo.",
+          "tipo": "Escáner de red",
+          "plataforma": "Open Source"
+        },
+        {
+          "nombre": "NetSim (Boson)",
+          "url": "https://www.boson.com/netsim-cisco-network-simulator",
+          "descripcion": "Simulador de red para preparar certificaciones Cisco (CCNA, CCNP). Ofrece versión de prueba gratuita con laboratorios guiados.",
+          "tipo": "Simulador",
+          "plataforma": "Boson"
         }
       ]
     },
@@ -153,6 +197,50 @@
           "certificado": "Gratuito (open-source)",
           "nivel": "Principiante–Avanzado",
           "descripcion": "La alternativa open-source número 1 a VMware. Virtualización KVM, contenedores LXC y almacenamiento ZFS."
+        }
+      ],
+      "herramientas": [
+        {
+          "nombre": "VirtualBox",
+          "url": "https://www.virtualbox.org/",
+          "descripcion": "Hipervisor gratuito y open-source de Oracle. Crea y ejecuta máquinas virtuales de cualquier sistema operativo (Windows, Linux, macOS) en tu computadora. El punto de partida perfecto para aprender virtualización.",
+          "tipo": "Hipervisor",
+          "plataforma": "Oracle / Open Source"
+        },
+        {
+          "nombre": "VMware Workstation Player",
+          "url": "https://www.vmware.com/products/workstation-player.html",
+          "descripcion": "Versión gratuita de VMware para uso personal y educativo. Permite correr una VM a la vez. Ideal para aprender a configurar sistemas operativos de servidor sin comprar hardware.",
+          "tipo": "Hipervisor",
+          "plataforma": "VMware / Broadcom"
+        },
+        {
+          "nombre": "Docker Desktop",
+          "url": "https://www.docker.com/products/docker-desktop/",
+          "descripcion": "La forma más fácil de instalar y usar Docker en Windows o macOS. Incluye una interfaz gráfica para gestionar contenedores, imágenes y volúmenes. Gratuito para uso educativo.",
+          "tipo": "Contenedores",
+          "plataforma": "Docker"
+        },
+        {
+          "nombre": "Proxmox VE",
+          "url": "https://www.proxmox.com/en/proxmox-virtual-environment/overview",
+          "descripcion": "Plataforma de virtualización empresarial 100% open-source. Permite gestionar VMs y contenedores en un servidor real. Muy usada en laboratorios de TI y como alternativa gratuita a VMware vSphere.",
+          "tipo": "Hipervisor",
+          "plataforma": "Open Source"
+        },
+        {
+          "nombre": "Ubuntu Server",
+          "url": "https://ubuntu.com/download/server",
+          "descripcion": "El sistema operativo Linux para servidores más popular del mundo. Gratuito, con actualizaciones de seguridad por 5 años. El mejor punto de partida para aprender administración de servidores Linux.",
+          "tipo": "Sistema Operativo",
+          "plataforma": "Canonical"
+        },
+        {
+          "nombre": "MobaXterm",
+          "url": "https://mobaxterm.mobatek.net/",
+          "descripcion": "Terminal avanzada para Windows que incluye cliente SSH, SFTP, RDP, VNC y más en una sola app. La versión Home es completamente gratuita. Perfecta para gestionar servidores remotamente.",
+          "tipo": "Terminal / SSH",
+          "plataforma": "Mobatek"
         }
       ]
     },
@@ -248,6 +336,92 @@
           "certificado": "Gratuito (insignia oficial de Oracle)",
           "nivel": "Principiante",
           "descripcion": "Fundamentos de SQL y bases de datos relacionales, respaldado por el líder histórico en BD empresariales."
+        }
+      ],
+      "herramientas": [
+        {
+          "nombre": "Visual Studio Code",
+          "url": "https://code.visualstudio.com/",
+          "descripcion": "El editor de código más popular del mundo. Gratuito, open-source y con miles de extensiones. Soporta prácticamente cualquier lenguaje de programación. Hecho por Microsoft.",
+          "tipo": "Editor de código",
+          "plataforma": "Microsoft"
+        },
+        {
+          "nombre": "Git",
+          "url": "https://git-scm.com/",
+          "descripcion": "El sistema de control de versiones estándar de la industria. Guarda el historial de todos los cambios en tu código. Trabajar sin Git en 2025 es como escribir sin guardar el archivo.",
+          "tipo": "Control de versiones",
+          "plataforma": "Open Source"
+        },
+        {
+          "nombre": "Postman",
+          "url": "https://www.postman.com/",
+          "descripcion": "La herramienta esencial para probar y diseñar APIs. Envía peticiones HTTP (GET, POST, PUT, DELETE) y ve las respuestas en tiempo real. Gratuito para uso individual.",
+          "tipo": "Cliente API",
+          "plataforma": "Postman"
+        },
+        {
+          "nombre": "DBeaver Community",
+          "url": "https://dbeaver.io/",
+          "descripcion": "Gestor de bases de datos universal y gratuito. Conecta y administra MySQL, PostgreSQL, SQLite, MongoDB y más de 100 motores de BD desde una sola interfaz visual.",
+          "tipo": "Gestor de BD",
+          "plataforma": "Open Source"
+        },
+        {
+          "nombre": "Figma (Free tier)",
+          "url": "https://www.figma.com/",
+          "descripcion": "La herramienta de diseño UI/UX más usada por equipos de producto. El plan gratuito permite diseñar prototipos interactivos y compartirlos. Esencial para cualquier desarrollador Frontend.",
+          "tipo": "Diseño UI/UX",
+          "plataforma": "Figma"
+        },
+        {
+          "nombre": "Node.js",
+          "url": "https://nodejs.org/",
+          "descripcion": "El entorno de ejecución de JavaScript en el servidor. Gratuito y open-source. Con Node.js puedes construir APIs, servidores web y automatizaciones usando el mismo lenguaje que en el Frontend.",
+          "tipo": "Entorno de ejecución",
+          "plataforma": "Open Source"
+        },
+        {
+          "nombre": "Python",
+          "url": "https://www.python.org/",
+          "descripcion": "El lenguaje de programación más popular para principiantes, automatización, backend e IA. Gratuito y con una comunidad enorme. Si aprendes un solo lenguaje, que sea Python.",
+          "tipo": "Lenguaje de programación",
+          "plataforma": "Open Source"
+        },
+        {
+          "nombre": "Insomnia",
+          "url": "https://insomnia.rest/",
+          "descripcion": "Alternativa open-source a Postman para probar APIs REST y GraphQL. Interfaz limpia y sin distracciones. El plan gratuito cubre todo lo que necesitas como estudiante.",
+          "tipo": "Cliente API",
+          "plataforma": "Open Source"
+        },
+        {
+          "nombre": "GitHub Desktop",
+          "url": "https://desktop.github.com/",
+          "descripcion": "Interfaz gráfica oficial de GitHub para usar Git sin la terminal. Perfecta para quienes están aprendiendo control de versiones. Completamente gratuita.",
+          "tipo": "Control de versiones",
+          "plataforma": "GitHub"
+        },
+        {
+          "nombre": "Supabase (Free Tier)",
+          "url": "https://supabase.com/",
+          "descripcion": "Backend como servicio con base de datos PostgreSQL, autenticación y APIs generadas automáticamente. El plan gratuito incluye 500MB de BD y 2GB de almacenamiento.",
+          "tipo": "Backend / Base de datos",
+          "plataforma": "Supabase"
+        },
+        {
+          "nombre": "Vercel (Free Tier)",
+          "url": "https://vercel.com/",
+          "descripcion": "Plataforma de deploy para proyectos web. Sube tu proyecto de GitHub y en minutos tienes una URL pública. Perfecto para construir y mostrar tu portafolio. Completamente gratis.",
+          "tipo": "Deploy / Hosting",
+          "plataforma": "Vercel"
+        },
+        {
+          "nombre": "MongoDB Compass",
+          "url": "https://www.mongodb.com/products/tools/compass",
+          "descripcion": "La interfaz gráfica oficial para MongoDB. Visualiza, edita y consulta tus datos NoSQL sin escribir código. Gratuita y disponible para Windows, macOS y Linux.",
+          "tipo": "Gestor de BD NoSQL",
+          "plataforma": "MongoDB"
         }
       ]
     }
