@@ -5,6 +5,64 @@
     { "valor": "3", "etiqueta": "Pilares tecnológicos" },
     { "valor": "0€", "etiqueta": "Coste de certificados clave" }
   ],
+  "iaEticaProfesional": {
+    "principios": [
+      "Transparencia en el uso de herramientas IA",
+      "Verificación humana de resultados",
+      "Privacidad de datos y no exposición",
+      "Mitigación de sesgos algorítmicos",
+      "Seguridad de los sistemas"
+    ],
+    "usoProfesional": [
+      "Generar plantillas y esqueletos de código",
+      "Explicar conceptos complejos",
+      "Automatizar tareas repetitivas",
+      "Mejorar redacción de documentación"
+    ],
+    "usoDeshonesto": [
+      "Pasar código generado 100% por IA como propio sin revisión",
+      "Incluir datos sensibles en prompts",
+      "No validar la veracidad de la información",
+      "Usar IA para hacer trampa en exámenes o certificaciones"
+    ],
+    "cursosIA": [
+      {
+        "nombre": "Google AI Essentials",
+        "plataforma": "Coursera",
+        "url": "https://www.coursera.org/learn/google-ai-essentials",
+        "certificado": "Certificado Profesional",
+        "descripcion": "Fundamentos y ética de la IA por Google"
+      },
+      {
+        "nombre": "Microsoft AI Skills",
+        "plataforma": "LinkedIn Learning / Microsoft Learn",
+        "url": "https://learning.linkedin.com/es-es/ai-skills-training",
+        "certificado": "Certificado",
+        "descripcion": "Habilidades clave en inteligencia artificial"
+      },
+      {
+        "nombre": "IBM AI Foundations",
+        "plataforma": "Coursera",
+        "url": "https://www.coursera.org/specializations/ibm-ai-foundations",
+        "certificado": "Certificado",
+        "descripcion": "Conceptos básicos de IA para todos los perfiles"
+      },
+      {
+        "nombre": "Elements of AI (Helsinki)",
+        "plataforma": "University of Helsinki",
+        "url": "https://www.elementsofai.com/",
+        "certificado": "Certificado Gratis",
+        "descripcion": "Curso famoso globalmente sobre las bases de IA"
+      },
+      {
+        "nombre": "Prompt Engineering for Developers",
+        "plataforma": "DeepLearning.AI",
+        "url": "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/",
+        "certificado": "Certificado",
+        "descripcion": "Cómo comunicarse efectivamente con LLMs"
+      }
+    ]
+  },
   "pilares": [
     {
       "slug": "infraestructura-redes",
@@ -12,6 +70,103 @@
       "acento": "blue",
       "icono": "network",
       "resumen": "Aprende cómo se conectan los dispositivos: el lenguaje universal de internet, los aparatos que mueven los datos y cómo llegan a su destino.",
+      "analisis": {
+        "importancia": "La columna vertebral de la economía digital. Sin redes seguras, no hay nube ni aplicaciones.",
+        "estadisticas": [
+          {"dato": "Crecimiento proyectado de empleo", "valor": "9% hasta 2030"},
+          {"dato": "Inversión global en infraestructura", "valor": "$300B+"},
+          {"dato": "Demanda de expertos en ciberseguridad", "valor": "+3.5M"}
+        ],
+        "tendencias2026": [
+          "Adopción masiva de IPv6",
+          "Redes definidas por software (SDN)",
+          "Conectividad 5G y 6G empresarial"
+        ],
+        "observaciones": [
+          {"tipo": "important", "texto": "Las certificaciones de Cisco (CCNA) siguen siendo el estándar."},
+          {"tipo": "tip", "texto": "Familiarízate con Python para la automatización de redes."},
+          {"tipo": "warning", "texto": "El hardware heredado es vulnerable; prioriza seguridad en el diseño."}
+        ]
+      },
+      "secciones": [
+        {
+          "titulo": "1.Fundamentos de Redes",
+          "descripcion": "Conceptos básicos de cómo se comunican los sistemas informáticos.",
+          "nivel": "Fundamentos",
+          "icono": "globe",
+          "temas": [{"titulo":"OSI y TCP/IP", "descripcion":"Modelos de comunicación."},{"titulo":"Topologías", "descripcion":"Estructura física y lógica."},{"titulo":"Medios de transmisión", "descripcion":"Cobre, fibra óptica, inalámbrico."}],
+          "recursosAdicionales": [{"nombre":"Cisco NetAcad", "url":"#"}]
+        },
+        {
+          "titulo": "2.Hardware de Red",
+          "descripcion": "Equipos físicos",
+          "nivel": "Fundamentos",
+          "icono": "router",
+          "temas": [{"titulo":"Switches", "descripcion":"L2"},{"titulo":"Routers", "descripcion":"L3"},{"titulo":"Firewalls", "descripcion":"Seguridad"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "3.Direccionamiento y Subnetting",
+          "descripcion": "Asignación de IPs",
+          "nivel": "Intermedio",
+          "icono": "map",
+          "temas": [{"titulo":"IPv4", "descripcion":"Clases"},{"titulo":"IPv6", "descripcion":"Futuro"},{"titulo":"Subnetting", "descripcion":"División"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "4.Protocolos y Servicios",
+          "descripcion": "Reglas de comunicación",
+          "nivel": "Intermedio",
+          "icono": "server",
+          "temas": [{"titulo":"DNS", "descripcion":"Nombres"},{"titulo":"DHCP", "descripcion":"Asignación dinámica"},{"titulo":"HTTP/S", "descripcion":"Web"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "5.Redes Inalámbricas",
+          "descripcion": "Wi-Fi y más",
+          "nivel": "Intermedio",
+          "icono": "wifi",
+          "temas": [{"titulo":"Wi-Fi 6", "descripcion":"Estándar actual"},{"titulo":"Seguridad WPA3", "descripcion":"Protección"},{"titulo":"Controladores", "descripcion":"Gestión"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "6.Seguridad de Red",
+          "descripcion": "Proteger los datos",
+          "nivel": "Avanzado",
+          "icono": "shield",
+          "temas": [{"titulo":"VPN", "descripcion":"Túneles"},{"titulo":"IDS/IPS", "descripcion":"Detección"},{"titulo":"Zero Trust", "descripcion":"Confianza cero"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "7.Cloud Networking",
+          "descripcion": "Redes en la nube",
+          "nivel": "Avanzado",
+          "icono": "cloud",
+          "temas": [{"titulo":"VPC", "descripcion":"Red virtual"},{"titulo":"Direct Connect", "descripcion":"Enlace dedicado"},{"titulo":"Load Balancers", "descripcion":"Distribución"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "8.Automatización+IA en Redes",
+          "descripcion": "El futuro de las operaciones",
+          "nivel": "Especialización",
+          "icono": "cpu",
+          "temas": [{"titulo":"Ansible/Python", "descripcion":"Scripts"},{"titulo":"SDN", "descripcion":"Software defined"},{"titulo":"AIOps", "descripcion":"IA"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        }
+      ],
+      "rutasCarrera": [
+        {"titulo":"Network Engineer", "descripcion":"Diseña e implementa redes corporativas.", "salarioEstimado":"$65K-$110K USD", "demanda":"Alta", "certificacionesClave":["CCNA", "Network+"], "habilidadesRequeridas":["Routing", "Switching"]},
+        {"titulo":"Network Security Analyst", "descripcion":"Protege la infraestructura de ataques.", "salarioEstimado":"$70K-$120K USD", "demanda":"Muy Alta", "certificacionesClave":["Security+", "CCNA Security"], "habilidadesRequeridas":["Firewalls", "VPN"]},
+        {"titulo":"Cloud Network Architect", "descripcion":"Diseña soluciones de red en la nube.", "salarioEstimado":"$100K-$160K USD", "demanda":"Muy Alta", "certificacionesClave":["AWS Advanced Networking"], "habilidadesRequeridas":["Cloud", "VPC"]},
+        {"titulo":"NOC Engineer", "descripcion":"Monitorea la salud de la red 24/7.", "salarioEstimado":"$45K-$75K USD", "demanda":"Alta", "certificacionesClave":["CCNA"], "habilidadesRequeridas":["Monitoreo", "Troubleshooting"]}
+      ],
+      "iaAplicada": {
+        "descripcion": "Uso de inteligencia artificial para optimizar y predecir comportamientos en redes.",
+        "herramientas": [{"nombre":"Cisco AI Network Analytics", "descripcion":"Visibilidad avanzada en la red", "url":"#"},{"nombre":"AIOps", "descripcion":"Automatización de operaciones de TI", "url":"#"},{"nombre":"Juniper Mist AI", "descripcion":"Wi-Fi inteligente y operaciones autónomas", "url":"#"}],
+        "casosDeUso": ["Predicción de fallas de hardware", "Optimización de tráfico en tiempo real"],
+        "reglaDeOro": "La IA no reemplaza la comprensión profunda de los protocolos.",
+        "cursos": [{"nombre":"AI in Networking", "plataforma":"Coursera", "url":"#", "certificado":"Sí"}]
+      },
       "subtemas": [
         {
           "titulo": "Modelo OSI / TCP-IP",
@@ -127,6 +282,91 @@
       "acento": "purple",
       "icono": "server",
       "resumen": "Descubre cómo funcionan las máquinas que sostienen internet: servidores físicos, máquinas virtuales y la tecnología que permite tener muchas computadoras dentro de una sola.",
+      "analisis": {
+        "importancia": "La base del cómputo moderno.",
+        "estadisticas": [{"dato":"Crecimiento", "valor":"15%"}, {"dato":"Empleos", "valor":"3M+"}, {"dato":"Salario Mediano", "valor":"$90K"}],
+        "tendencias2026": ["Kubernetes Everywhere", "Serverless", "Green Computing"],
+        "observaciones": [{"tipo":"important", "texto":"Linux es mandatorio."}, {"tipo":"tip", "texto":"Practica con Docker."}, {"tipo":"warning", "texto":"No ignores los respaldos."}]
+      },
+      "secciones": [
+        {
+          "titulo": "1.Fundamentos de Servidores",
+          "descripcion": "Hardware y conceptos",
+          "nivel": "Fundamentos",
+          "icono": "server",
+          "temas": [{"titulo":"Servidores físicos", "descripcion":"Hardware"},{"titulo":"Rack", "descripcion":"Montaje"},{"titulo":"Energía", "descripcion":"UPS"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "2.Sistemas Operativos de Servidor",
+          "descripcion": "SO para empresas",
+          "nivel": "Fundamentos",
+          "icono": "monitor",
+          "temas": [{"titulo":"Linux", "descripcion":"Ubuntu, RedHat"},{"titulo":"Windows Server", "descripcion":"AD, IIS"},{"titulo":"Unix", "descripcion":"Sistemas heredados"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "3.Virtualización Clásica",
+          "descripcion": "Máquinas virtuales",
+          "nivel": "Intermedio",
+          "icono": "copy",
+          "temas": [{"titulo":"Hipervisores", "descripcion":"ESXi, Hyper-V"},{"titulo":"VMs", "descripcion":"Conceptos"},{"titulo":"Storage", "descripcion":"SAN/NAS"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "4.Contenedores Docker",
+          "descripcion": "Virtualización ligera",
+          "nivel": "Intermedio",
+          "icono": "box",
+          "temas": [{"titulo":"Imágenes", "descripcion":"Construcción"},{"titulo":"Contenedores", "descripcion":"Ejecución"},{"titulo":"Docker Compose", "descripcion":"Orquestación básica"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "5.Orquestación Kubernetes",
+          "descripcion": "Gestión a escala",
+          "nivel": "Avanzado",
+          "icono": "layers",
+          "temas": [{"titulo":"Pods", "descripcion":"Unidad básica"},{"titulo":"Servicios", "descripcion":"Exposición"},{"titulo":"Deployments", "descripcion":"Despliegues"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "6.Almacenamiento y Backup",
+          "descripcion": "Persistencia de datos",
+          "nivel": "Intermedio",
+          "icono": "database",
+          "temas": [{"titulo":"RAID", "descripcion":"Arreglos de discos"},{"titulo":"SAN", "descripcion":"Storage Area Network"},{"titulo":"Backup", "descripcion":"Estrategias 3-2-1"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "7.Monitoreo y HA",
+          "descripcion": "Alta disponibilidad",
+          "nivel": "Avanzado",
+          "icono": "activity",
+          "temas": [{"titulo":"Prometheus", "descripcion":"Métricas"},{"titulo":"Grafana", "descripcion":"Dashboards"},{"titulo":"Clustering", "descripcion":"Redundancia"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "8.IaC+IA",
+          "descripcion": "Infraestructura como código",
+          "nivel": "Especialización",
+          "icono": "code",
+          "temas": [{"titulo":"Terraform", "descripcion":"Provisionamiento"},{"titulo":"Ansible", "descripcion":"Configuración"},{"titulo":"IA Assistants", "descripcion":"Copilot para IaC"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        }
+      ],
+      "rutasCarrera": [
+        {"titulo":"SysAdmin", "descripcion":"Administración de sistemas", "salarioEstimado":"$55K-$95K", "demanda":"Alta", "certificacionesClave":["RHCSA", "MCSA"], "habilidadesRequeridas":["Linux", "Windows Server"]},
+        {"titulo":"DevOps", "descripcion":"Puente entre desarrollo y operaciones", "salarioEstimado":"$80K-$140K", "demanda":"Muy Alta", "certificacionesClave":["CKA", "AWS DevOps"], "habilidadesRequeridas":["CI/CD", "Docker", "Kubernetes"]},
+        {"titulo":"Cloud Engineer", "descripcion":"Ingeniería en la nube", "salarioEstimado":"$85K-$150K", "demanda":"Muy Alta", "certificacionesClave":["AWS Solutions Architect", "Azure Administrator"], "habilidadesRequeridas":["Cloud", "IaC"]},
+        {"titulo":"SRE", "descripcion":"Confiabilidad de sitios web", "salarioEstimado":"$100K-$170K", "demanda":"Muy Alta", "certificacionesClave":["CKA"], "habilidadesRequeridas":["Programación", "Monitoreo", "Sistemas"]}
+      ],
+      "iaAplicada": {
+        "descripcion": "Uso de IA para generar infraestructura como código.",
+        "herramientas": [{"nombre":"GitHub Copilot para IaC", "descripcion":"Asistente de código", "url":"#"},{"nombre":"Ansible Lightspeed", "descripcion":"Generación de playbooks", "url":"#"},{"nombre":"AWS CodeWhisperer", "descripcion":"Asistente para AWS", "url":"#"}],
+        "casosDeUso": ["Generación de scripts de Terraform", "Automatización de playbooks"],
+        "reglaDeOro": "Siempre prueba el código generado en un entorno de desarrollo.",
+        "cursos": [{"nombre":"AI for DevOps", "plataforma":"Udemy", "url":"#", "certificado":"Sí"}]
+      },
       "subtemas": [
         {
           "titulo": "Servidor físico vs Máquina Virtual (VM)",
@@ -250,6 +490,91 @@
       "acento": "emerald",
       "icono": "code",
       "resumen": "De la pantalla que ves a la base de datos que guarda tus datos: aprende cómo se construye una aplicación completa y cuál es el rol real de la IA como herramienta del programador.",
+      "analisis": {
+        "importancia": "Creación de software que impulsa el mundo digital.",
+        "estadisticas": [{"dato":"Crecimiento", "valor":"22%"}, {"dato":"Empleos", "valor":"5M+"}, {"dato":"Salario Mediano", "valor":"$95K"}],
+        "tendencias2026": ["Desarrollo asistido por IA", "WebAssembly", "Microfrontends"],
+        "observaciones": [{"tipo":"important", "texto":"Fundamentos primero, frameworks después."}, {"tipo":"tip", "texto":"Domina Git y el control de versiones."}, {"tipo":"warning", "texto":"No copies código de IA sin entenderlo."}]
+      },
+      "secciones": [
+        {
+          "titulo": "1.Fundamentos de Programación",
+          "descripcion": "Lógica y algoritmos",
+          "nivel": "Fundamentos",
+          "icono": "code",
+          "temas": [{"titulo":"Variables", "descripcion":"Datos"},{"titulo":"Bucles", "descripcion":"Control"},{"titulo":"Funciones", "descripcion":"Reuso"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "2.Frontend Web",
+          "descripcion": "La interfaz de usuario",
+          "nivel": "Fundamentos",
+          "icono": "layout",
+          "temas": [{"titulo":"HTML", "descripcion":"Estructura"},{"titulo":"CSS", "descripcion":"Estilos"},{"titulo":"JS", "descripcion":"Interactividad"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "3.Frameworks Frontend",
+          "descripcion": "Desarrollo moderno",
+          "nivel": "Intermedio",
+          "icono": "react",
+          "temas": [{"titulo":"React", "descripcion":"Componentes"},{"titulo":"Vue", "descripcion":"Reactividad"},{"titulo":"Angular", "descripcion":"Framework completo"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "4.Backend Development",
+          "descripcion": "La lógica del servidor",
+          "nivel": "Intermedio",
+          "icono": "server",
+          "temas": [{"titulo":"Node.js", "descripcion":"JS en servidor"},{"titulo":"Python", "descripcion":"Django/FastAPI"},{"titulo":"Java", "descripcion":"Spring Boot"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "5.Bases de Datos",
+          "descripcion": "Almacenamiento de información",
+          "nivel": "Intermedio",
+          "icono": "database",
+          "temas": [{"titulo":"SQL", "descripcion":"Relacional"},{"titulo":"NoSQL", "descripcion":"Documentos"},{"titulo":"ORMs", "descripcion":"Mapeo"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "6.APIs y Microservicios",
+          "descripcion": "Comunicación entre sistemas",
+          "nivel": "Avanzado",
+          "icono": "link",
+          "temas": [{"titulo":"REST", "descripcion":"Arquitectura"},{"titulo":"GraphQL", "descripcion":"Consultas"},{"titulo":"gRPC", "descripcion":"Rendimiento"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "7.Testing y CI/CD",
+          "descripcion": "Calidad y despliegue",
+          "nivel": "Avanzado",
+          "icono": "check-circle",
+          "temas": [{"titulo":"Unit Testing", "descripcion":"Pruebas"},{"titulo":"E2E", "descripcion":"Flujo completo"},{"titulo":"Pipelines", "descripcion":"Automatización"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        },
+        {
+          "titulo": "8.IA para Desarrolladores",
+          "descripcion": "Productividad aumentada",
+          "nivel": "Especialización",
+          "icono": "cpu",
+          "temas": [{"titulo":"Copilot", "descripcion":"Asistente"},{"titulo":"Code Review AI", "descripcion":"Revisiones"},{"titulo":"Prompting", "descripcion":"Mejores peticiones"}],
+          "recursosAdicionales": [{"nombre":"Wiki", "url":"#"}]
+        }
+      ],
+      "rutasCarrera": [
+        {"titulo":"Frontend Dev", "descripcion":"Especialista en UI/UX", "salarioEstimado":"$50K-$100K", "demanda":"Alta", "certificacionesClave":["Meta Frontend"], "habilidadesRequeridas":["React", "CSS", "JS"]},
+        {"titulo":"Backend Dev", "descripcion":"Arquitectura del servidor", "salarioEstimado":"$60K-$120K", "demanda":"Muy Alta", "certificacionesClave":["AWS Backend"], "habilidadesRequeridas":["Node/Python", "SQL", "APIs"]},
+        {"titulo":"Full Stack", "descripcion":"Dominio completo de la web", "salarioEstimado":"$65K-$130K", "demanda":"Muy Alta", "certificacionesClave":["Full Stack Cert"], "habilidadesRequeridas":["Frontend", "Backend", "Deploy"]},
+        {"titulo":"Data Engineer", "descripcion":"Tuberías de datos", "salarioEstimado":"$80K-$140K", "demanda":"Muy Alta", "certificacionesClave":["Google Data Engineer"], "habilidadesRequeridas":["Python", "SQL", "Spark"]}
+      ],
+      "iaAplicada": {
+        "descripcion": "Uso de IA para programación, testing y debugging.",
+        "herramientas": [{"nombre":"GitHub Copilot", "descripcion":"Autocompletado de código", "url":"#"},{"nombre":"Cursor IDE", "descripcion":"Editor centrado en IA", "url":"#"},{"nombre":"Claude/ChatGPT debugging", "descripcion":"Asistente de errores", "url":"#"},{"nombre":"AI testing", "descripcion":"Generación de pruebas", "url":"#"}],
+        "casosDeUso": ["Escribir boilerplate", "Explicar código heredado", "Generar tests unitarios"],
+        "reglaDeOro": "La IA es tu copiloto, no el piloto. Revisa todo.",
+        "cursos": [{"nombre":"AI for Developers", "plataforma":"Coursera", "url":"#", "certificado":"Sí"}]
+      },
       "subtemas": [
         {
           "titulo": "Frontend: lo que el usuario ve",

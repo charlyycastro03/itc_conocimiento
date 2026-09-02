@@ -192,3 +192,25 @@ body {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--surface-border), transparent);
 }
+
+/* Level badges */
+.badge-fundamentos { display:inline-flex; align-items:center; gap:4px; font-size:0.65rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; padding:2px 8px; border-radius:9999px; background:rgba(16,185,129,0.1); color:#059669; border:1px solid rgba(16,185,129,0.2); }
+.badge-intermedio { display:inline-flex; align-items:center; gap:4px; font-size:0.65rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; padding:2px 8px; border-radius:9999px; background:rgba(59,130,246,0.1); color:#2563eb; border:1px solid rgba(59,130,246,0.2); }
+.badge-avanzado { display:inline-flex; align-items:center; gap:4px; font-size:0.65rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; padding:2px 8px; border-radius:9999px; background:rgba(139,92,246,0.1); color:#7c3aed; border:1px solid rgba(139,92,246,0.2); }
+.badge-especializacion { display:inline-flex; align-items:center; gap:4px; font-size:0.65rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; padding:2px 8px; border-radius:9999px; background:rgba(245,158,11,0.1); color:#d97706; border:1px solid rgba(245,158,11,0.2); }
+.dark .badge-fundamentos { background:rgba(16,185,129,0.15); color:#34d399; border-color:rgba(52,211,153,0.2); }
+.dark .badge-intermedio { background:rgba(59,130,246,0.15); color:#60a5fa; border-color:rgba(96,165,250,0.2); }
+.dark .badge-avanzado { background:rgba(139,92,246,0.15); color:#a78bfa; border-color:rgba(167,139,250,0.2); }
+.dark .badge-especializacion { background:rgba(245,158,11,0.15); color:#fbbf24; border-color:rgba(251,191,36,0.2); }
+
+/* Roadmap connector */
+.roadmap-line { position:absolute; left:19px; top:0; bottom:0; width:2px; background:linear-gradient(to bottom, var(--surface-border), var(--accent), var(--surface-border)); }
+
+/* Demanda bar */
+.demanda-bar { height:6px; border-radius:9999px; background:var(--surface-border); overflow:hidden; }
+.demanda-fill { height:100%; border-radius:9999px; transition:width 0.8s cubic-bezier(0.16,1,0.3,1); }
+
+/* IA golden accent */
+.ia-golden-border { border-image:linear-gradient(135deg, var(--accent), #f59e0b) 1; }
+.ia-highlight { background:linear-gradient(135deg, rgba(245,158,11,0.08), rgba(79,70,229,0.08)); border:1px solid rgba(245,158,11,0.2); border-radius:12px; padding:16px; }
+.dark .ia-highlight { background:linear-gradient(135deg, rgba(245,158,11,0.1), rgba(129,140,248,0.1)); border-color:rgba(245,158,11,0.25); }
