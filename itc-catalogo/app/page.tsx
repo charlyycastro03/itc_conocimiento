@@ -286,6 +286,48 @@ export default function Home() {
           </div>
         </motion.section>
 
+        <div className="section-divider" />
+
+        {/* ── ENGLISH MULTIPLIER ── */}
+        <motion.section
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={stagger}
+          className="glass rounded-2xl overflow-hidden border border-[var(--surface-border)]"
+        >
+          <div className="p-8 md:p-12 relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-amber-500/10 pointer-events-none" />
+            <div className="relative z-10 flex flex-col items-center text-center space-y-6">
+              <span className="mono-label">El inglés: tu multiplicador de salario</span>
+              <motion.div variants={fadeUp} className="max-w-3xl">
+                <blockquote className="text-2xl md:text-3xl font-bold italic text-[var(--text-primary)]">
+                  "En TI, el inglés no es opcional — es el skill que multiplica tu salario x2 o x3"
+                </blockquote>
+              </motion.div>
+              <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 w-full">
+                {[
+                  { text: "70% de la documentación técnica está en inglés" },
+                  { text: "2-3x más salario con inglés C1 en empresas remotas" },
+                  { text: "90% de las certificaciones están en inglés" },
+                ].map((stat, i) => (
+                  <motion.div key={i} variants={fadeUp} className="p-5 rounded-xl bg-[var(--bg)] border border-[var(--surface-border)] shadow-sm">
+                    <p className="font-semibold text-lg text-[var(--text-primary)]">{stat.text}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+              <motion.div variants={fadeUp} className="pt-6">
+                <Link
+                  href="#pilares"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-indigo-500 to-amber-500 hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl"
+                >
+                  <Globe size={18} /> Explora recursos para mejorar
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </motion.section>
+
       </div>
     </div>
   );

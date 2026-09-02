@@ -54,10 +54,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="flex-1">{children}</main>
 
           {/* ── Footer ── */}
-          <footer className="border-t border-[var(--surface-border)] py-8">
-            <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[var(--text-muted)]">
-              <p>Catálogo ITC — recursos gratuitos para ingenieros del futuro.</p>
-              <p className="mono-label">Todos los cursos son verificados y gratuitos.</p>
+          <footer className="border-t border-[var(--surface-border)] py-12 mt-12 bg-[var(--bg-secondary)]">
+            <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-[var(--text-muted)]">
+              <div className="space-y-4">
+                <h4 className="font-semibold text-[var(--text-primary)]">Pilares ITC</h4>
+                <div className="flex flex-col gap-2">
+                  <Link href="/pilar/infraestructura-redes" className="hover:text-[var(--text-primary)] transition-colors">Infraestructura y Redes</Link>
+                  <Link href="/pilar/servidores-virtualizacion" className="hover:text-[var(--text-primary)] transition-colors">Servidores y Virtualización</Link>
+                  <Link href="/pilar/programacion" className="hover:text-[var(--text-primary)] transition-colors">Programación</Link>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <h4 className="font-semibold text-[var(--text-primary)]">Plataformas destacadas</h4>
+                <div className="flex flex-col gap-2">
+                  <a href="https://www.netacad.com/" target="_blank" rel="noreferrer" className="hover:text-[var(--text-primary)] transition-colors">Cisco NetAcad</a>
+                  <a href="https://www.freecodecamp.org/" target="_blank" rel="noreferrer" className="hover:text-[var(--text-primary)] transition-colors">freeCodeCamp</a>
+                  <a href="https://pll.harvard.edu/course/cs50-introduction-computer-science" target="_blank" rel="noreferrer" className="hover:text-[var(--text-primary)] transition-colors">Harvard CS50</a>
+                  <a href="https://learn.microsoft.com/" target="_blank" rel="noreferrer" className="hover:text-[var(--text-primary)] transition-colors">Microsoft Learn</a>
+                </div>
+              </div>
+              <div className="space-y-4 flex flex-col md:items-end justify-center md:text-right">
+                <p>Hecho con ❤️ para futuros ingenieros</p>
+                <p className="mono-label">Todos los cursos son verificados y gratuitos.</p>
+              </div>
             </div>
           </footer>
         </ThemeProvider>

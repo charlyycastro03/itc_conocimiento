@@ -11,7 +11,8 @@ import { RoadmapVisual } from "@/components/RoadmapVisual";
 import { RutaCarreraCard } from "@/components/RutaCarreraCard";
 import { IAProTip } from "@/components/IAProTip";
 import { SectionNav } from "@/components/SectionNav";
-import { ArrowLeft, BookOpen, Award, ExternalLink, CheckCircle } from "lucide-react";
+import { ArrowLeft, BookOpen, Award, ExternalLink, CheckCircle, ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 
 /* ────────────────────────────────────────────────────────────
    CONFIG POR PILAR
@@ -96,6 +97,17 @@ function CursoCard({ curso, accentColor }: { curso: Curso; accentColor: string }
 /* ────────────────────────────────────────────────────────────
    PAGE
 ───────────────────────────────────────────────────────────── */
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const pilar = data.pilares.find((p) => p.slug === slug);
+  if (!pilar) return { title: 'Pilar no encontrado | ITC Catálogo' };
+  
+  return {
+    title: `${pilar.titulo} | ITC Catálogo`,
+    description: pilar.resumen,
+  };
+}
+
 export default async function PilarPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const pilar = data.pilares.find((p) => p.slug === slug);
@@ -383,6 +395,46 @@ export default async function PilarPage({ params }: { params: Promise<{ slug: st
             </div>
           </section>
         )}
+
+        <div className="section-divider" />
+
+        {/* ── SIGUIENTE PILAR ── */}
+        <FadeIn delay={0.3}>
+          <div className="mt-12">
+            <span className="mono-label block text-center mb-6">Siguiente paso</span>
+            <Link href={`/pilar/${(() => {
+              const order = ['infraestructura-redes', 'servidores-virtualizacion', 'programacion'];
+              const currentIdx = order.indexOf(pilar.slug);
+              return order[(currentIdx + 1) % order.length];
+            })()}`} className="block group">
+              <div className="glass rounded-2xl p-6 md:p-8 border border-[var(--surface-border)] hover:border-[var(--accent)] hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">
+                    {(() => {
+                      const order = ['infraestructura-redes', 'servidores-virtualizacion', 'programacion'];
+                      const currentIdx = order.indexOf(pilar.slug);
+                      const nextSlug = order[(currentIdx + 1) % order.length];
+                      const nextPilar = data.pilares.find(p => p.slug === nextSlug);
+                      return nextPilar?.titulo;
+                    })()}
+                  </h3>
+                  <p className="text-sm text-[var(--text-secondary)] line-clamp-2 max-w-xl">
+                    {(() => {
+                      const order = ['infraestructura-redes', 'servidores-virtualizacion', 'programacion'];
+                      const currentIdx = order.indexOf(pilar.slug);
+                      const nextSlug = order[(currentIdx + 1) % order.length];
+                      const nextPilar = data.pilares.find(p => p.slug === nextSlug);
+                      return nextPilar?.resumen;
+                    })()}
+                  </p>
+                </div>
+                <div className="w-12 h-12 rounded-full glass flex items-center justify-center border border-[var(--surface-border)] group-hover:bg-[var(--accent)] group-hover:text-white transition-colors flex-shrink-0">
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+          </div>
+        </FadeIn>
 
       </div>
     </div>
